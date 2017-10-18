@@ -1,0 +1,2 @@
+the shader is in client/flare-fs.glsl. it was developed in a threejs environment so vUv would need to be replaced
+If u want to run the server, do "npm install --production" and run "npm start", then go to localhost:1447

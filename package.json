@@ -1,0 +1,32 @@
+{
+  "license": "MIT",
+  "description": "a forked version of the star shader from lerp.io",
+  "bugs": {
+    "url": "https://github.com/arxii/sun-shader"
+  },
+  "author": {
+    "name": "arxii"
+  },
+  "description:": "teragrid",
+  "devDependencies": {
+    "coffee-loader": "^0.8.0",
+    "coffeescript": "^2.0.0",
+    "css-loader": "^0.28.7",
+    "raw-loader": "^1.0.0-beta.0",
+    "style-loader": "^0.18.2",
+    "three": "^0.87.1"
+  },
+  "dependencies": {
+  },
+  "homepage": "http://arxii.github.io/repository",
+  "name": "sun-flare-shader",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arxii/star-flare-shader.git"
+  },
+  "version": "0.0.1",
+  "optionalDependencies": {
+    "utf-8-validate": "^3.0.2"
+  }
+}
