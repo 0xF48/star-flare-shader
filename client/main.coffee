@@ -16,7 +16,7 @@ camera.position.z = 100
 cameraViewProjectionMatrix = new THREE.Matrix4();
 renderer = new THREE.WebGLRenderer
 	canvas: canvas
-	antialias: yes
+	antialias: no
 	depth : no
 	logarithmicDepthBuffer : no
 	precision: "lowp"
