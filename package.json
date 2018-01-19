@@ -11,14 +11,10 @@
   "devDependencies": {
     "coffee-loader": "^0.8.0",
     "coffeescript": "^2.0.0",
-    "css-loader": "^0.28.7",
     "raw-loader": "^1.0.0-beta.0",
-    "style-loader": "^0.18.2",
-    "three": "^0.87.1"
+    "webpack": "^3.10.0"
   },
-  "dependencies": {
-  },
-  "homepage": "http://arxii.github.io/repository",
+  "homepage": "http://arxii.github.io/star-flare-shader",
   "name": "sun-flare-shader",
   "readmeFilename": "README.md",
   "repository": {
@@ -28,5 +24,8 @@
   "version": "0.0.1",
   "optionalDependencies": {
     "utf-8-validate": "^3.0.2"
+  },
+  "dependencies": {
+    "shader-box": "^1.1.1"
   }
 }
