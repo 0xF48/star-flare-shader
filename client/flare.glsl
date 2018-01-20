@@ -60,18 +60,18 @@ vec3 flare (float alpha,vec2 main, float seed,float dir){
 	float n = noise(vec2( (seed+ang*amnt+t*0.1) + cos(alpha*13.8+noise(t+ang+seed)*3.0)*0.2+seed/20.0,seed+t+ang));
 
 
-	n *= pow(noise(vec2(seed*194.0+ ang*amnt+t + cos(alpha*2.0*n+t*1.1+ang)*2.8,seed+t+ang)+alpha),2.0);
+	n *= pow(noise(vec2(seed*194.0+ ang*amnt+t + cos(alpha*2.0*n+t*1.1+ang)*2.8,seed+t+ang)+alpha),4.0);
 	n *= pow(noise(vec2(seed*134.0+ ang*amnt+t + cos(alpha*2.2*n+t*1.1+ang)*1.1,seed+t+ang)+alpha),3.0);
-	n *= pow(noise(vec2(seed*123.0+ ang*amnt+t + cos(alpha*2.3*n+t*1.1+ang)*0.8,seed+t+ang)+alpha),4.0);
+	n *= pow(noise(vec2(seed*123.0+ ang*amnt+t + cos(alpha*2.3*n+t*1.1+ang)*0.8,seed+t+ang)+alpha),2.0);
 	n *= pow(alpha,2.6);
 	n *= (ang+PI)/2.0 * (TWO_PI - ang - PI); //fade out flares at pole.
 	
 	
-	n += sqrt(alpha * alpha) * 0.26;
+	n += sqrt(alpha * alpha * alpha) * 0.25;
 
-	float g = 0.01;
 
-	return vec3(pow(n*2.0,2.0)+g,n+g,n+g);
+
+	return vec3(pow(n*2.0,2.0),n,n);
 }
 
 
