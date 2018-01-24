@@ -1,6 +1,8 @@
 {Box,Shader} = require 'shader-box'
 
 
+
+
 window.box = new Box
 	grid: [1,1]
 	canvas: window.canvas

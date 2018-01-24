@@ -8,15 +8,19 @@ var cfg = {
 		]
 	},
 	entry: {
-		main: __dirname+"/client/main.coffee",
+		main: __dirname+"/source/main.coffee",
 	},
 	resolve: {
 		"modules": ["node_modules"],
 	},
 	output: {
 		path: __dirname+'/build',
-		publicPath: __dirname+'/build',
+		publicPath: '/build/',
 		filename: "[name].js"
 	},
+	devServer: {
+		port: 3000,
+		compress: true
+	}
 }
 module.exports = cfg;

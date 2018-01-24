@@ -1,4 +1,4 @@
-precision lowp float;
+precision mediump float;
 uniform vec2 u_position;
 uniform float iTime;
 
@@ -6,8 +6,8 @@ uniform float iTime;
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
 #define SQ3 1.73205080757
-#define I_R 0.5
-#define F_R 8.0
+#define I_R 0.3
+#define F_R 10.0
 
 varying vec2 v_uv;
 
@@ -53,17 +53,16 @@ vec3 flare (float alpha,vec2 main, float seed,float dir){
 		return vec3(0.0);
 	}
 	
-
-	float amnt = 0.6+sin(seed)*8.0;
 	float ang = atan(main.y, main.x);
-	float t = iTime * .6 * dir;
+	float t = iTime * .4 * dir;
+	float amnt = -abs(3.0+sin(seed+noise(seed))*1.6);
 	float n = noise(vec2( (seed+ang*amnt+t*0.1) + cos(alpha*13.8+noise(t+ang+seed)*3.0)*0.2+seed/20.0,seed+t+ang));
 
 
 	n *= pow(noise(vec2(seed*194.0+ ang*amnt+t + cos(alpha*2.0*n+t*1.1+ang)*2.8,seed+t+ang)+alpha),4.0);
 	n *= pow(noise(vec2(seed*134.0+ ang*amnt+t + cos(alpha*2.2*n+t*1.1+ang)*1.1,seed+t+ang)+alpha),3.0);
 	n *= pow(noise(vec2(seed*123.0+ ang*amnt+t + cos(alpha*2.3*n+t*1.1+ang)*0.8,seed+t+ang)+alpha),2.0);
-	n *= pow(alpha,2.6);
+	n *= pow(alpha,2.6-noise(seed));
 	n *= (ang+PI)/2.0 * (TWO_PI - ang - PI); //fade out flares at pole.
 	
 	
