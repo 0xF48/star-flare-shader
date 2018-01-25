@@ -7,6 +7,10 @@
   "author": {
     "name": "arxii"
   },
+  "scripts":{
+    "dev":"webpack-dev-server",
+    "build":"webpack --progress"
+  },
   "description:": "teragrid",
   "devDependencies": {
     "coffee-loader": "^0.8.0",

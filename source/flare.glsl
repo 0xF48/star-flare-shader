@@ -1,5 +1,4 @@
 precision mediump float;
-uniform vec2 u_position;
 uniform float iTime;
 
 
@@ -55,8 +54,8 @@ vec3 flare (float alpha,vec2 main, float seed,float dir){
 	
 	float ang = atan(main.y, main.x);
 	float t = iTime * .4 * dir;
-	float amnt = -abs(3.0+sin(seed+noise(seed))*1.6);
-	float n = noise(vec2( (seed+ang*amnt+t*0.1) + cos(alpha*13.8+noise(t+ang+seed)*3.0)*0.2+seed/20.0,seed+t+ang));
+	float amnt = -5.0+sin(seed+noise(seed))*0.6;
+	float n = noise(vec2( (seed+ang*amnt+t*0.1) + cos(alpha*15.5+noise(t*2.0*noise(seed))*3.0)*0.2+seed/20.0,seed+t+ang));
 
 
 	n *= pow(noise(vec2(seed*194.0+ ang*amnt+t + cos(alpha*2.0*n+t*1.1+ang)*2.8,seed+t+ang)+alpha),4.0);
