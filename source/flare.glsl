@@ -55,17 +55,17 @@ vec3 flare (float alpha,vec2 main, float seed,float dir){
 	float ang = atan(main.y, main.x);
 	float t = iTime * .4 * dir;
 	float amnt = -5.0+sin(seed+noise(seed))*0.6;
-	float n = noise(vec2( (seed+ang*amnt+t*0.1) + cos(alpha*15.5+noise(t*2.0*noise(seed))*3.0)*0.2+seed/20.0,seed+t+ang));
+	float n = noise(vec2( (seed+ang*amnt+t*0.1) + cos(seed+alpha*10.5+t)*0.4+noise(seed),seed+t+ang));
 
 
-	n *= pow(noise(vec2(seed*194.0+ ang*amnt+t + cos(alpha*2.0*n+t*1.1+ang)*2.8,seed+t+ang)+alpha),4.0);
-	n *= pow(noise(vec2(seed*134.0+ ang*amnt+t + cos(alpha*2.2*n+t*1.1+ang)*1.1,seed+t+ang)+alpha),3.0);
-	n *= pow(noise(vec2(seed*123.0+ ang*amnt+t + cos(alpha*2.3*n+t*1.1+ang)*0.8,seed+t+ang)+alpha),2.0);
-	n *= pow(alpha,2.6-noise(seed));
+	n *= pow(noise(vec2(seed*194.0+ ang*amnt+t + cos(seed+alpha*3.2*n+t*1.1+ang)*1.8,seed+t+ang)+alpha),4.0);
+	n *= pow(noise(vec2(seed*134.0+ ang*amnt+t + sin(seed+alpha*2.0*n+t*1.1+ang)*1.1,seed+t+ang)+alpha),3.0);
+	n *= pow(noise(vec2(seed*123.0+ ang*amnt+t + sin(seed+alpha*1.8*n+t*1.1+ang)*0.8,seed+t+ang)+alpha),2.0);
+	n *= pow(alpha,3.5);
 	n *= (ang+PI)/2.0 * (TWO_PI - ang - PI); //fade out flares at pole.
 	
 	
-	n += sqrt(alpha * alpha * alpha) * 0.25;
+	n += sqrt(alpha * alpha * alpha * alpha) * 0.27;
 
 
 
