@@ -8,7 +8,8 @@ var cfg = {
 		]
 	},
 	entry: {
-		main: __dirname+"/source/main.coffee",
+		main: "./source/main.coffee",
+		tunnel: "./source/tunnel.coffee",
 	},
 	resolve: {
 		"modules": ["node_modules"],
