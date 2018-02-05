@@ -20,6 +20,7 @@ var cfg = {
 		filename: "[name].js"
 	},
 	devServer: {
+		host: '192.168.1.11',
 		port: 3002,
 		compress: true
 	}
